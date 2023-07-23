@@ -1,11 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Todo App</title>
-</head>
-<body>
-    
-</body>
+    <link rel="stylesheet" href="styles/style.css" />
+    <link rel="shortcut icon" href="images/favicon.png" type="image/x-icon" />
+
+    <script defer src="main.js"></script>
+  </head>
+  <body>
+    <header class="header">
+      <div class="header_div">
+        <img src="images/todolist.png" alt="Todo list" />
+        Todo List
+      </div>
+    </header>
+    <main class="main">
+      <nav class="nav">
+        <h1 class="list-title">My list</h1>
+        <div class="nav-elements">
+          <button class="button-list">
+            <svg class="icon">
+              <use xlink:href="./images/sprite.svg#list-check-solid"></use>
+            </svg>
+
+            <span>hehe</span>
+            <svg class="icon icon_x">
+                <use xlink:href="./images/sprite.svg#x-solid"></use>
+              </svg>
+          </button>
+        </div>
+      </nav>
+      <div class="project-preview">well</div>
+    </main>
+  </body>
 </html>
