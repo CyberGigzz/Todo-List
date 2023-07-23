@@ -1,0 +1,139 @@
+/* Importing font family */
+@import url("https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Rubik:ital,wght@0,400;0,600;0,700;1,400;1,500;1,600&family=Skranji&display=swap");
+
+:root {
+  --primary-dark: #333;
+  --primary-light: #ddd;
+  --secondary-light: #999;
+}
+
+/* Global reset */
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+ol,
+ul {
+  list-style: none;
+}
+
+html {
+  /* font-size: 10px; */
+  /* 10px / 16px = 0.625 = 62.5% */
+  font-size: 62.5%;
+  overflow-x: hidden;
+  /* does not work on Safari */
+  /* scroll-behavior: smooth; */
+}
+
+body {
+  font-family: "Rubik", sans-serif;
+  line-height: 1;
+  font-weight: 400;
+  color: #fff;
+  font-size: 1.6rem;
+  min-height: 100vh;
+  color: var(--primary-dark);
+}
+
+/* Header */
+.header {
+  height: 8rem;
+  background-color: var(--primary-dark);
+  font-size: 3.6rem;
+  font-weight: 600;
+  color: #fff;
+  padding: 2rem;
+  display: flex;
+  align-items: center;
+}
+
+.header > div {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  gap: 1rem;
+}
+
+.header img {
+  height: 7rem;
+  width: 7rem;
+}
+
+/* main */
+.main {
+  display: flex;
+  min-height: calc(100vh - 8rem);
+  font-size: 1.8rem;
+}
+
+/* nav*/
+.nav {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  padding: 2rem 3rem;
+  min-width: 25rem;
+  background-color: var(--primary-light);
+  color: #111;
+}
+
+.list-title {
+  font-size: 2.4rem;
+}
+
+.nav-elements {
+  display: flex;
+  flex-direction: column;
+  /* font-size: 2.4rem; */
+  font-weight: 600;
+}
+
+.button-list {
+  display: flex;
+  gap: 1rem;
+  justify-content: start;
+  align-items: center;
+  padding: 1rem 2rem;
+  font-size: 1.6rem;
+  border: none;
+  background-color: var(--primary-light);
+  border-radius: 0.6rem;
+}
+
+.button-list .icon {
+  width: 2rem;
+  height: 2rem;
+}
+
+.button-list .icon_x {
+  margin-left: auto;
+  margin-right: .5rem;
+  width: 1.5rem;
+  height: 1.5rem;
+  font-weight: 900;
+}
+
+.button-list:hover {
+  cursor: pointer;
+  background-color: var(--secondary-light);
+}
+
+/*  */
+
+/*  */
+
+/* Project preview */
+.project-preview {
+  width: 90rem;
+  margin: 0 auto;
+  padding: 2rem 3rem;
+}
