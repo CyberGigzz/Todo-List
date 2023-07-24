@@ -8,16 +8,12 @@
 }
 
 /* Global reset */
-* {
+*,
+*::before,
+*::after {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
-}
-
-*,
-*:before,
-*:after {
-  box-sizing: inherit;
 }
 
 ol,
@@ -31,7 +27,7 @@ html {
   font-size: 62.5%;
   overflow-x: hidden;
   /* does not work on Safari */
-  /* scroll-behavior: smooth; */
+  scroll-behavior: smooth;
 }
 
 body {
@@ -46,9 +42,9 @@ body {
 
 /* Header */
 .header {
-  height: 8rem;
+  height: 10rem;
   background-color: var(--primary-dark);
-  font-size: 3.6rem;
+  font-size: 3.8rem;
   font-weight: 600;
   color: #fff;
   padding: 2rem;
@@ -80,8 +76,9 @@ body {
   display: flex;
   flex-direction: column;
   gap: 2rem;
-  padding: 2rem 3rem;
+  padding: 2rem 2rem;
   min-width: 25rem;
+  width: 25rem;
   background-color: var(--primary-light);
   color: #111;
 }
@@ -109,6 +106,10 @@ body {
   border-radius: 0.6rem;
 }
 
+.button-list.active {
+    display: none;
+}
+
 .button-list .icon {
   width: 2rem;
   height: 2rem;
@@ -116,16 +117,92 @@ body {
 
 .button-list .icon_x {
   margin-left: auto;
-  margin-right: .5rem;
+  margin-right: 0.5rem;
   width: 1.5rem;
   height: 1.5rem;
   font-weight: 900;
+  visibility: hidden; /* Initially hide the icon_x */
 }
 
 .button-list:hover {
   cursor: pointer;
   background-color: var(--secondary-light);
 }
+
+.button-list:hover .icon_x {
+  visibility: visible; /* Show the icon_x when button-list is being hovered */
+}
+
+.add-element {
+  /* display: flex; */
+  display: none;
+  flex-direction: column;
+  margin-top: 1rem;
+}
+
+.add-element.active {
+  display: flex;
+}
+
+/* Popup */
+.add-project-popup {
+  display: none;
+  padding: 1rem;
+}
+
+.add-project-popup.active {
+  display: block;
+}
+
+.input-add-project-popup {
+  display: block;
+  width: 100%;
+  padding: 1rem 1rem;
+  border: 1px solid #aaa;
+  border-radius: 0.5rem;
+  margin-bottom: 0.7rem;
+  outline: none;
+}
+
+.add-project-popup-buttons {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Buttons */
+.button-add-project-popup {
+  border: 1px solid #99dd99;
+  border-radius: 0.5rem;
+  padding: 1rem 2.5rem;
+  cursor: pointer;
+  font-size: 1.6rem;
+  font-weight: 600;
+  background-color: #b8e994;
+  transition: background-color 0.1s ease;
+}
+
+.button-add-project-popup:hover {
+  background-color: #91cc70;
+}
+
+.button-cancel-project-popup {
+  border: 1px solid #eeadad;
+  border-radius: 0.5rem;
+  padding: 1rem 2rem;
+  cursor: pointer;
+  font-size: 1.6rem;
+  font-weight: 600;
+  background-color: #ff7675;
+  /* Transition to slightly darker color on hover */
+  transition: background-color 0.2s ease;
+}
+
+.button-cancel-project-popup:hover {
+  background-color: #f13c2b;
+}
+
+/*  */
 
 /*  */
 
