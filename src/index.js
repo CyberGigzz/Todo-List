@@ -1,12 +1,22 @@
-"strict";
-
 class UI {
-  static loadHomePage() {
-    UI.initAddProjectButtons();
-    UI.initAddTasksButtons();
+  constructor() {
+    this.initAddProjectButtons();
+    this.initAddTasksButtons();
   }
 
-  static initAddProjectButtons() {
+  // Closing popups
+  closeAllPopups() {
+    const popupProject = document.getElementById("add-project-popup");
+    const popupTask = document.getElementById("add-task-popup");
+    const addList = document.getElementById("add-list");
+    const addTask = document.getElementById("tasks-div");
+    popupProject.classList.remove("active");
+    popupTask.classList.remove("active");
+    addList.classList.add("active");
+    addTask.classList.remove("active");
+  }
+
+  initAddProjectButtons() {
     const addProjectButton = document.getElementById("add-projects-button");
     const addProjectPopup = document.getElementById("add-project-popup");
     const addList = document.getElementById("add-list");
@@ -16,6 +26,7 @@ class UI {
 
     // Add Project button
     addProjectButton.addEventListener("click", () => {
+      this.closeAllPopups();
       addList.classList.remove("active");
       addProjectPopup.classList.add("active");
     });
@@ -27,7 +38,7 @@ class UI {
     });
   }
 
-  static initAddTasksButtons() {
+  initAddTasksButtons() {
     const addTaskButton = document.getElementById("add-tasks-button");
     const addTask = document.getElementById("tasks-div");
     const addTasksPopup = document.getElementById("add-task-popup");
@@ -37,6 +48,7 @@ class UI {
 
     // Add Project button
     addTaskButton.addEventListener("click", () => {
+      this.closeAllPopups();
       addTask.classList.add("active");
       addTasksPopup.classList.add("active");
     });
@@ -44,10 +56,11 @@ class UI {
     // Cancel button
     cancelListButton.addEventListener("click", () => {
       addTasksPopup.classList.remove("active");
-
       addTask.classList.remove("active");
     });
   }
 }
 
-document.addEventListener("DOMContentLoaded", UI.loadHomePage);
+document.addEventListener("DOMContentLoaded", () => {
+  const ui = new UI();
+});
