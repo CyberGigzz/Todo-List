@@ -108,7 +108,8 @@ body {
 }
 
 .button-list.active {
-  display: none;
+  /* display: none; */
+  background-color: #bbb;
 }
 
 .button-list .icon {
