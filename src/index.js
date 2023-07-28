@@ -82,7 +82,9 @@ class UI {
       const newListName = addListInput.value.trim();
 
       if (newListName !== "") {
-        const newButton = new DynamicButton(newListName);
+        
+        const newButton = new DynamicButton(newListName, this);
+
         this.dynamicButtonsArray.push(newButton);
 
         console.log(this.dynamicButtonsArray);
@@ -117,6 +119,13 @@ class UI {
     cancelButton.addEventListener("click", () => {
       closePopup();
     });
+  }
+
+  removeButton(button) {
+    const index = this.dynamicButtonsArray.indexOf(button);
+    if (index !== -1) {
+      this.dynamicButtonsArray.splice(index, 1);
+    }
   }
 }
 

@@ -1,6 +1,7 @@
 export class DynamicButton {
-  constructor(name) {
+  constructor(name, ui) {
     this.name = name;
+    this.ui = ui;
     this.active = false;
     this.element = this.createButtonElement();
 
@@ -89,9 +90,15 @@ export class DynamicButton {
     }
   }
 
+  // deleteButton() {
+  //   const navElementsDiv = document.getElementById("nav-elements");
+  //   navElementsDiv.removeChild(this.element);
+  // }
+
   deleteButton() {
     const navElementsDiv = document.getElementById("nav-elements");
     navElementsDiv.removeChild(this.element);
+    this.ui.removeButton(this);
   }
 
   
