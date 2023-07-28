@@ -78,11 +78,6 @@ class UI {
       this.closeAllPopups(); // Close the popup
     };
 
-    // const deleteButton = (button) => {
-    //   // Remove the button from the navElementsDiv
-    //   navElementsDiv.removeChild(button);
-    // };
-
     addListButton.addEventListener("click", () => {
       const newListName = addListInput.value.trim();
 
@@ -94,6 +89,17 @@ class UI {
 
         navElementsDiv.appendChild(newButton.element);
         addListInput.value = "";
+
+        // Add an event listener to the new button to handle clicks
+        newButton.element.addEventListener("click", () => {
+          // Set the active property of all buttons to false
+          this.dynamicButtonsArray.forEach((button) => {
+            button.active = false;
+          });
+
+          // Set the active property of the clicked button to true
+          newButton.active = true;
+        });
       }
     });
 

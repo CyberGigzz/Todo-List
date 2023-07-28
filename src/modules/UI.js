@@ -64,19 +64,28 @@ export class DynamicButton {
   }
 
   handleButtonClick() {
+    // Toggle the active state
     this.toggleActive();
+    console.log(this.active);
 
-    const activeButton = document.querySelector(".button-list.active");
-    if (activeButton !== null) {
-      const activeButtonSpan = activeButton.querySelector("span");
-      activeButtonSpan.classList.remove("bold-text");
-      activeButton.classList.remove("active");
+    // Remove the "active" class from the previously active button (if any)
+    const prevActiveButton = document.querySelector(".button-list.active");
+    console.log(prevActiveButton);
+    if (prevActiveButton !== null) {
+      const prevActiveButtonSpan = prevActiveButton.querySelector("span");
+      prevActiveButtonSpan.classList.remove("bold-text");
+      prevActiveButton.classList.remove("active");
     }
 
+    // Add the "active" class to the current active button (if it is now active)
     if (this.active) {
       const span = this.element.querySelector("span");
       span.classList.add("bold-text");
       this.element.classList.add("active");
+    } else {
+      const span = this.element.querySelector("span");
+      span.classList.remove("bold-text");
+      this.element.classList.remove("active");
     }
   }
 
@@ -84,4 +93,6 @@ export class DynamicButton {
     const navElementsDiv = document.getElementById("nav-elements");
     navElementsDiv.removeChild(this.element);
   }
+
+  
 }
