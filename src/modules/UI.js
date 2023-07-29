@@ -3,6 +3,7 @@ export class DynamicButton {
     this.name = name;
     this.ui = ui;
     this.active = false;
+    this.tasks = [];
     this.element = this.createButtonElement();
 
     // Check if the element has the "active" class initially
@@ -90,17 +91,27 @@ export class DynamicButton {
     }
   }
 
-  // deleteButton() {
-  //   const navElementsDiv = document.getElementById("nav-elements");
-  //   navElementsDiv.removeChild(this.element);
-  // }
+  // lists
+  addTask(taskName) {
+    this.tasks.push(taskName);
+  }
+
+  removeTask(taskName) {
+    const index = this.tasks.indexOf(taskName);
+    if (index !== -1) {
+      this.tasks.splice(index, 1);
+    }
+  }
 
   deleteButton() {
     const navElementsDiv = document.getElementById("nav-elements");
     navElementsDiv.removeChild(this.element);
     this.ui.removeButton(this);
-  }
 
-  
-  
+    // Remove this button's element from the DOM
+    this.element.remove();
+
+    this.ui.updateListName("");
+    this.ui.updateTasksList(undefined);
+  }
 }
