@@ -285,9 +285,10 @@ class UI {
         tasks: button.tasks,
       };
     });
-
+    
     // Save the data to localStorage
     localStorage.setItem("listsData", JSON.stringify(listsData));
+    console.log(`listsData ${listsData}`);
   }
 
   loadData() {
