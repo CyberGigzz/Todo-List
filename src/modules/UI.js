@@ -68,11 +68,9 @@ export class DynamicButton {
   handleButtonClick() {
     // Toggle the active state
     this.toggleActive();
-    console.log(this.active);
 
     // Remove the "active" class from the previously active button (if any)
     const prevActiveButton = document.querySelector(".button-list.active");
-    console.log(prevActiveButton);
     if (prevActiveButton !== null) {
       const prevActiveButtonSpan = prevActiveButton.querySelector("span");
       prevActiveButtonSpan.classList.remove("bold-text");

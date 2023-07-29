@@ -216,8 +216,6 @@ class UI {
 
         this.dynamicButtonsArray.push(newButton);
 
-        console.log(this.dynamicButtonsArray);
-
         navElementsDiv.appendChild(newButton.element);
         addListInput.value = "";
 
@@ -285,10 +283,9 @@ class UI {
         tasks: button.tasks,
       };
     });
-    
+
     // Save the data to localStorage
     localStorage.setItem("listsData", JSON.stringify(listsData));
-    console.log(`listsData ${listsData}`);
   }
 
   loadData() {
